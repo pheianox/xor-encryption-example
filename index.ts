@@ -1,14 +1,15 @@
-log("➡️ Encryption ➡️")
 const MESSAGE = "Salam, necəsüz?"
 const KEY = "123"
+
+log("➡️ Encryption ➡️")
 const encryptedMessage = encrypt(MESSAGE, KEY)
 log(`✉️ ${MESSAGE} → 🗝️${KEY} → ${encryptedMessage}`)
 
 
 log("➡️ Decryption ➡️")
-const CUSTOM_KEYS = [KEY, "1", "12","1234", "ok"]
+const customKeys = [KEY, "1", "12","1234", "ok"]
 const randomKeys = Array(7).fill(0).map(() => random(1_000_000_000_000_000, 9_000_000_000_000_000).toString(16))
-const allKeys = [...CUSTOM_KEYS, ...randomKeys]
+const allKeys = [...customKeys, ...randomKeys]
 log(resutls(encryptedMessage, allKeys))
 
 function resutls(messageEncrypted: string, keys: string[]) {
